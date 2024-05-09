@@ -6,6 +6,7 @@ header('Access-Control-Allow-Methods: GET, PUT, DELETE, POST');
 $server_method = $_SERVER['REQUEST_METHOD'];
 
 if ($server_method == 'GET') {
+
     $sql = "SELECT *, (CASE WHEN favorite = 1 THEN 1 ELSE 0 END) AS is_favorite 
     FROM `tbl_recipes` 
     INNER JOIN tbl_categories ON tbl_recipes.category_id = tbl_categories.category_id 
@@ -44,6 +45,7 @@ if ($server_method == 'GET') {
 } 
 
 else if ($server_method == 'POST') {
+
     // Check if required fields are present
     if (!isset($_POST['recipe_name'])) {
         return error422('recipe_name not found in the request');

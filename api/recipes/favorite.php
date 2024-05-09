@@ -12,6 +12,7 @@ if ($server_method == 'PUT') {
     if (!isset($data['recipe_id'])) {
         return error422('Recipe id not found');
     }
+    
     if (!isset($data['favorite'])) {
         return error422('favorite not found');
     }
