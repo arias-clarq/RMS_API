@@ -25,6 +25,7 @@ if ($server_method == 'GET') {
             'instructions' => $row['instructions'],
             'ingredients' => $row['ingredients'],
             'favorite' => $row['favorite'],
+            'image' => $row['image_url']
         );
 
         // Add the category data to the recipe object
